@@ -5,4 +5,4 @@
 - No response from remote network
 
 ### Evidence
-!ping-fail.png
+![Ping Failure](../screenshots/ping-fail.png)
