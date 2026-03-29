@@ -1,86 +1,93 @@
-# 🚀 Azure Hybrid Lab (BGP + IPsec + OSPF)
-
-This project demonstrates a hybrid cloud setup connecting an on-premises network to Azure using:
-
-* IPsec (IKEv2 / VTI)
-* BGP (Azure ↔ pfSense)
-* OSPF (pfSense ↔ LAN)
+# Azure Hybrid Network Lab  
+**BGP over IPsec (IKEv2/VTI) + OSPF (LAN)**
 
 ---
 
-## 🏗️ Architecture
+## 📌 Overview
 
-![Architecture](architecture/diagram.png)
+This project demonstrates a **hybrid network architecture between Azure and on-premises infrastructure**, using:
 
----
-
-## 🧠 Routing Design
-
-* **BGP** → Azure ↔ pfSense
-* **OSPF** → pfSense ↔ LAN
-* Hybrid routing model (cloud + internal)
+- IPsec (IKEv2 / VTI)
+- BGP (Azure ↔ pfSense)
+- OSPF (LAN routing)
+- End-to-end connectivity validation
+- Real-world troubleshooting scenario
 
 ---
 
-## ❌ Problem
+## 🧠 Architecture
 
-* No connectivity between Azure and LAN
-* ICMP failing
-* RDP timeout
-
----
-
-## 🔍 Troubleshooting
-
-tcpdump revealed:
-
-* Traffic entering IPsec tunnel
-* No return traffic
+<p align="center">
+  <img src="architecture/diagram.png" width="700">
+</p>
 
 ---
 
-## 💥 Root Cause
+## ⚙️ Technologies Used
 
-Missing return route on LAN side.
-
----
-
-## 🛠️ Fix
-
-Added static route:
-
-10.100.0.0/16 → 10.10.99.1
+- Azure Virtual Network (VNet)
+- pfSense (IPsec + FRR BGP)
+- FRRouting (BGP / OSPF)
+- Windows Server / Client
+- Ubuntu Server
+- tcpdump (packet analysis)
 
 ---
 
-## ✅ Result
+## 🔗 Routing Design
 
-* Full connectivity restored
-* ICMP working
-* End-to-end communication successful
+- **BGP** used between Azure and pfSense (dynamic routing over IPsec)
+- **OSPF** used internally between pfSense and LAN router
+- No static routes between environments
+
+---
+
+## 🔐 IPsec Tunnel
+
+- IKEv2 with VTI
+- AES-256 encryption
+- SHA256 authentication
+- Stable tunnel with continuous traffic flow
+
+---
+
+## 🌐 End-to-End Connectivity
+
+- LAN → Azure VM connectivity validated
+- Azure → LAN connectivity validated
+- ICMP tests confirm bidirectional communication
+
+---
+
+## 🧪 Troubleshooting Scenario
+
+A real issue was identified and resolved:
+
+- ICMP traffic entering IPsec tunnel
+- No return traffic
+- Root cause: routing propagation issue
+- Fix: corrected route advertisement (BGP/OSPF alignment)
+
+📂 Details:  
+👉 `troubleshooting/`
 
 ---
 
 ## 📸 Screenshots
 
-| Step    | Description                     |
-| ------- | ------------------------------- |
-| Problem | ![](screenshots/03-problem.png) |
-| Debug   | ![](screenshots/04-tcpdump.png) |
-| Fix     | ![](screenshots/05-fix.png)     |
-| Success | ![](screenshots/06-success.png) |
+See full lab validation:  
+👉 `screenshots/`
 
 ---
 
-## 📂 Configurations
+## 🚀 Key Takeaways
 
-See `/configs` folder for:
-
-* pfSense (BGP, OSPF, IPsec)
-* LAN routing
+- Dynamic routing is critical in hybrid environments  
+- IPsec alone is not enough — routing must be correct  
+- Troubleshooting skills are as important as configuration  
 
 ---
 
-## 💬 Notes
+## 👤 Author
 
-This lab simulates a real-world hybrid network using multiple routing protocols and highlights troubleshooting methodolo
+Hands-on lab focused on **real-world hybrid networking, not theory**.
