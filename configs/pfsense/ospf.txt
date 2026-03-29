@@ -1,1 +1,13 @@
 
+# OSPF Configuration (LAN Routing)
+
+router ospf
+ ospf router-id 10.10.99.1
+
+ network 172.16.0.0/24 area 0
+ network 10.10.99.0/24 area 0
+
+## Notes
+- OSPF used between pfSense and core router
+- Provides internal route propagation
+- FULL adjacency established
