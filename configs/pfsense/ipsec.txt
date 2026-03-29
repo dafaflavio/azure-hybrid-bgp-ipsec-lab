@@ -1,1 +1,20 @@
+# IPsec Configuration (pfSense)
 
+## Phase 1 (IKEv2)
+- Remote Gateway: <Azure Public IP>
+- Authentication: Pre-Shared Key
+- Encryption: AES-256
+- Hash: SHA256
+- DH Group: 2
+- Key Lifetime: 28800
+
+## Phase 2 (VTI)
+- Mode: Routed (VTI)
+- Local Network: 169.254.21.2/30
+- Remote Network: 169.254.21.1/30
+- Protocol: ESP
+- Encryption: AES-GCM-256
+
+## Notes
+- Tunnel established successfully
+- Used for BGP peering with Azure
