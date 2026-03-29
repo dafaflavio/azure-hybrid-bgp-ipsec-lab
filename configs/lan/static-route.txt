@@ -1,1 +1,12 @@
 
+# Static Route (Initial Setup / Troubleshooting)
+
+ip route 10.100.0.0 255.255.0.0 10.10.99.1
+
+## Context
+- Used temporarily during troubleshooting
+- Helped validate connectivity path
+
+## Final State
+- Removed after BGP/OSPF fully operational
+- No static routes required in final design
