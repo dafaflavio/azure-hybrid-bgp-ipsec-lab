@@ -18,7 +18,7 @@ This project demonstrates a **hybrid network architecture between Azure and on-p
 ## 🧠 Architecture
 
 <p align="center">
-  <img src="../architecture/diagram.png" width="700">
+  <img src="architecture/diagram.png" width="700">
 </p>
 
 ---
