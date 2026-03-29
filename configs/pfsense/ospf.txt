@@ -1,3 +1,6 @@
+# Lab: Azure Hybrid BGP over IPsec + OSPF
+# Author: <teu nome>
+# Purpose: Demonstrate hybrid routing and troubleshooting
 
 # OSPF Configuration (LAN Routing)
 
