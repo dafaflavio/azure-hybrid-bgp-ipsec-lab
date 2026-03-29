@@ -61,30 +61,42 @@ This project demonstrates a **hybrid network architecture between Azure and on-p
 
 ## 🧪 Troubleshooting Scenario
 
-A real issue was identified and resolved:
+A real-world issue was identified and resolved during validation:
 
-- ICMP traffic entering IPsec tunnel
-- No return traffic
-- Root cause: routing propagation issue
-- Fix: corrected route advertisement (BGP/OSPF alignment)
+- ❌ ICMP traffic entering IPsec tunnel
+- ❌ No return traffic from Azure
+- ⚠️ Root cause: routing propagation issue
+- ✅ Fix: corrected route advertisement (BGP ↔ OSPF alignment)
 
-📂 Details:  
-👉 `troubleshooting/`
+👉 **Deep dive:** [Troubleshooting analysis](troubleshooting/)
 
 ---
 
-## 📸 Screenshots
+## 📸 Validation & Proof
 
-See full lab validation:  
-👉 `screenshots/`
+End-to-end connectivity and routing validation:
+
+<p align="center">
+  <img src="screenshots/ping-success.png" width="700">
+</p>
+
+<p align="center">
+  <img src="screenshots/bgp-table.png" width="700">
+</p>
+
+<p align="center">
+  <img src="screenshots/ipsec-status.png" width="700">
+</p>
+
+👉 Full lab evidence: [View all screenshots](screenshots/)
 
 ---
 
 ## 🚀 Key Takeaways
 
-- Dynamic routing is critical in hybrid environments  
-- IPsec alone is not enough — routing must be correct  
-- Troubleshooting skills are as important as configuration  
+- Dynamic routing is critical in hybrid cloud environments  
+- IPsec alone is not enough — routing design must be correct  
+- Troubleshooting is a core engineering skill, not optional    
 
 ---
 
