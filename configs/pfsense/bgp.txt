@@ -1,1 +1,19 @@
 
+# BGP Configuration (FRRouting - pfSense)
+
+router bgp 65010
+ bgp router-id 10.10.99.1
+
+ neighbor 169.254.21.1 remote-as 65515
+ neighbor 169.254.21.1 description Azure
+
+ address-family ipv4 unicast
+  network 10.10.99.0/24
+  neighbor 169.254.21.1 activate
+ exit-address-family
+
+## Notes
+- Azure ASN: 65515
+- Local ASN: 65010
+- BGP running over IPsec (VTI)
+- Routes dynamically exchanged
