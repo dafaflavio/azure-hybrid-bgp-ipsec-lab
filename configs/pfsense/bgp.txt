@@ -1,4 +1,6 @@
-
+# Lab: Azure Hybrid BGP over IPsec + OSPF
+# Author: <teu nome>
+# Purpose: Demonstrate hybrid routing and troubleshooting
 # BGP Configuration (FRRouting - pfSense)
 
 router bgp 65010
