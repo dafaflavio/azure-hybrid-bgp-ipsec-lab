@@ -102,4 +102,15 @@ End-to-end connectivity and routing validation:
 
 ## 👤 Author
 
-Hands-on lab focused on **real-world hybrid networking, not theory**.
+Network engineer specializing in **hybrid cloud networking and dynamic routing**.
+
+This lab reflects hands-on experience with:
+- Azure hybrid connectivity
+- BGP over IPsec (IKEv2/VTI)
+- OSPF-based internal routing
+- Deep troubleshooting (tcpdump, routing analysis)
+
+Focused on solving **real-world network problems — not just building labs**.
+
+🔗 Open to opportunities in Cloud / Network Engineering
+🔗 [LinkedIn](https://www.linkedin.com/in/fdafa)
