@@ -1,6 +1,7 @@
 # Lab: Azure Hybrid BGP over IPsec + OSPF
 # Author: <teu nome>
 # Purpose: Demonstrate hybrid routing and troubleshooting
+
 # Static Route (Initial Setup / Troubleshooting)
 
 ip route 10.100.0.0 255.255.0.0 10.10.99.1
